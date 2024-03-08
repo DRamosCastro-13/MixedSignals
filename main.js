@@ -1,6 +1,7 @@
 let string1 = '';
 let string2 = '';
 let string3 = '';
+let message = [];
 
 const generateString1 = () => {
     let random = Math.floor(Math.random() * 2);
@@ -11,7 +12,7 @@ const generateString1 = () => {
         string1 = 'Your';
     }
 
-    return string1;
+    message.push(string1);
 };
 
 const generateString2 = (str) => {
@@ -29,7 +30,7 @@ const generateString2 = (str) => {
         }
     }
 
-    return string2;
+    message.push(string2);
 };
 
 const generateString3 = (str) => {
@@ -60,13 +61,15 @@ const generateString3 = (str) => {
             string3 = 'offer you as a gift to the aliens';
         }
     }
+
+    message.push(string3);
 };
 
 const generateRandomString = () => {
     generateString1();
     generateString2(string1);
     generateString3(string2);
+    console.log(message.join(' '));
 };
 
 generateRandomString();
-console.log(string1 + ' ' + string2 + ' ' + string3);
